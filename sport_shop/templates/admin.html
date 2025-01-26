@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+    <h1>Панель администратора</h1>
+    <h2>Добавить товар</h2>
+    <form action="/admin" method="post">
+        <input type="hidden" name="action" value="add">
+        <input type="text" name="name" placeholder="название" required> <br>
+        <input type="text" name="description" placeholder="описание" required> <br>
+        <input type="number" name="price" placeholder="цена" step="0.01" required> <br>
+        <input type="number" name="quantity" placeholder="количество" required> <br>
+        <input type="text" name="image_path" placeholder="путь к изображению" required> <br>
+        <button type="submit">Добавить</button>
+    </form>
+
+    <h2>Редактировать товары</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                <form action="/admin" method="post">
+                    <input type="hidden" name="product_id" value="{{ product[0] }}">
+                    <input type="hidden" name="action" value="edit">
+                    <input type="text" name="name" value="{{ product[1] }}" required>
+                    <input type="text" name="description" value="{{ product[2] }}" required>
+                    <input type="number" name="price" value="{{ product[3] }}" step="0.01" required>
+                    <input type="number" name="quantity" value="{{ product[4] }}" required>
+                    <input type="text" name="image_path" value="{{ product[5] }}" required>
+                    <button type="submit">Сохранить</button>
+                </form>
+                <form action="/admin" method="post">
+                    <input type="hidden" name="product_id" value="{{ product[0] }}">
+                    <input type="hidden" name="action" value="delete">
+                    <button type="submit">Удалить</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

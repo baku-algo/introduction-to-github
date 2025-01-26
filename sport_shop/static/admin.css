@@ -1,0 +1,103 @@
+/* General Reset */
+body, h1, h2, ul, li, form, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #fff7e6;
+    color: #333;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    color: #ff8800;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #ff8800;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/* Forms */
+form {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+form input {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+form input:focus {
+    border-color: #ff8800;
+}
+
+form button {
+    background-color: #ff8800;
+    color: #fff;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #e56f00;
+}
+
+/* List of Products */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+li form {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    form input, form button {
+        width: calc(50% - 0.5rem);
+        display: inline-block;
+    }
+
+    form button {
+        width: auto;
+    }
+}
